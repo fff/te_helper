@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+
+  "name": "timesheet helper",
+  "version": "1.1",
+
+  "icons": {"128":"imgs/128-icon.png"},
+  "description": "This extension checks the total hours.",
+
+  "permissions": [
+    "https://te.thoughtworks.com/"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://te.thoughtworks.com/time_sheets",
+                  "https://te.thoughtworks.com/time_sheets/*"],
+      "js": ["te_helper.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
